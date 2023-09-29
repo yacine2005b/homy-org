@@ -5,19 +5,20 @@
     <%- include('./partials/navBar.ejs') %>
 
     <div>
-      <h1>studying backend Right Now</h1>
+      <h1>BLOGS</h1>
     </div>
-    <div class="content">
+    <div class="contentBlogs">
       <% if(blogs.length >0) {%> <% blogs.forEach(blog => {%>
       <div class="blogs">
         <a href="/blogs/<%=blog._id%>" class="single">
-          <h3 class="title"><%= blog.title %></h3>
+          <h2 class="title"><%= blog.title %></h2>
+          <p>Date: <%= blog.date.toDateString() %></p>
           <p class="snippet"><%= blog.snippet %></p>
         </a>
       </div>
 
       <% }); %> <% }else {%>
-      <h1>there are no blogs</h1>
+      <h2>there are no blogs</h2>
       <%} %>
     </div>
     <%- include('./partials/footer.ejs') %>

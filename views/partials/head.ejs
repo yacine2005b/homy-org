@@ -1,12 +1,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Yacine | <%= title %></title>
   <style>
+    :root {
+      --blue: #031d44;
+      --light-blue: #48cae4;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      color: var(--blue);
     }
     body {
       max-width: 1100px;
@@ -21,15 +27,16 @@
     }
     a {
       text-decoration: none;
-      color: black;
+      color: var(--blue);
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      border-bottom: 2px solid grey;
+      border-bottom: 2px solid var(--blue);
       margin-bottom: 2rem;
+      padding: 1rem;
     }
     nav ul {
       display: flex;
@@ -44,13 +51,14 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: hsl(0, 1%, 31%);
+      color: var(--blue);
       padding-bottom: 3px;
       text-transform: uppercase;
+      font-weight: 700;
     }
+
     nav ul li a:hover {
-      color: blue;
-      border-bottom: 2px solid blue;
+      color: var(--light-blue);
     }
 
     .logo {
@@ -59,31 +67,49 @@
     }
     .logo a {
       text-decoration: none;
-      color: black;
+      color: #133c55;
     }
     .content {
       display: flex;
       gap: 30px;
     }
     .about {
-      width: 350px;
+      width: 70%;
       text-align: center;
       margin: 0 auto;
-      padding: 1rem;
-      border: 2px dashed blue;
+      padding: 2rem;
+      border: 2px dashed var(--blue);
       border-radius: 15px;
+      margin-bottom: 1.25rem;
     }
-    h1 {
-      padding: 1rem;
-      margin-bottom: 1.75rem;
-    }
+
     footer {
-      position: absolute;
-      top: 90%;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 7px;
     }
     .create-blog form {
       max-width: 400px;
       margin: 0 auto;
+    }
+    .contentBlogs {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .blogs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0 0.6rem;
+    }
+
+    .blogs .titleDetails {
+      margin-bottom: 1rem;
+      text-justify: center;
     }
     .create-blog input,
     textarea {
@@ -94,21 +120,21 @@
     }
     .create-blog input,
     textarea:focus {
-      outline-color: blue;
+      outline-color: var(--light-blue);
     }
     .create-blog label {
       display: block;
       margin-top: 24px;
       font-weight: 600;
       font-size: 20px;
-      color: hsl(0, 1%, 31%);
+      color: var(--blue);
     }
     textarea {
       height: 120px;
     }
     .create-blog button {
       width: 100%;
-      background-color: blue;
+      background-color: var(--blue);
       color: white;
       font-weight: 700;
       text-transform: uppercase;
@@ -122,27 +148,41 @@
     }
     .create-blog button:hover {
       background: white;
-      color: blue;
-      border: 2px solid black;
+      color: var(--blue);
+      border: 2px solid var(--blue);
     }
     .details {
-      position: relative;
+      width: 350px;
+      border: 3px dashed var(--blue);
+      margin: 0 auto;
+      margin-bottom: 18rem;
+      padding: 20px;
     }
-    .details h2 {
+    .titleDetails {
+      display: flex;
+      justify-content: space-between;
+    }
+    .details p {
+      text-align: center;
+    }
+    .details .titleDetails {
       margin-bottom: 3rem;
     }
     .delete {
-      position: absolute;
-      top: 0;
-      right: 0;
-      border-radius: 20%;
-      padding: 8px;
+      border-radius: 4%;
+
+      padding: 4px 4px;
+      text-align: center;
+      border-radius: 30px;
       text-transform: uppercase;
     }
+
     .delete:hover {
       cursor: pointer;
-      background-color: rgb(171, 32, 32);
       box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+    }
+    .delete img {
+      margin: auto;
     }
   </style>
 </head>

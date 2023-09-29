@@ -4,11 +4,15 @@
   <body>
     <%-include('./partials/navBar.ejs') %>
     <div class="details">
-      <h2><%= blog.title %></h2>
+      <div class="titleDetails">
+        <h2><%= blog.title %></h2>
+        <a class="delete" data-doc="<%=blog._id %>"
+          ><img src="/trashcan.svg" alt=""
+        /></a>
+      </div>
       <div class="body">
         <p><%= blog.body %></p>
       </div>
-      <a class="delete" data-doc="<%=blog._id %>">Delete</a>
     </div>
     <%-include('./partials/footer.ejs') %>
 
