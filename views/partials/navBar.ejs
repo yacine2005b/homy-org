@@ -5,6 +5,23 @@
   <ul>
     <li><a href="/about">about</a></li>
     <li><a href="/blogs/create">new blog</a></li>
-    <li class="active"><a href="/">home</a></li>
+    <li class="active"><a href="/blogs">home</a></li>
   </ul>
 </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentLocation = window.location.pathname;
+
+    // Loop through each link in the navigation bar
+    document.querySelectorAll("nav ul li a").forEach(function (link) {
+      // Compare the link's href attribute with the current page's URL
+      if (link.getAttribute("href") === currentLocation) {
+        // Add the 'active' class to the parent li element
+        link.parentNode.classList.add("active");
+      } else {
+        // Remove the 'active' class from the parent li element
+        link.parentNode.classList.remove("active");
+      }
+    });
+  });
+</script>
