@@ -12,11 +12,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     var currentLocation = window.location.pathname;
 
-    // Loop through each link in the navigation bar
     document.querySelectorAll("nav ul li a").forEach(function (link) {
-      // Compare the link's href attribute with the current page's URL
       if (link.getAttribute("href") === currentLocation) {
-        // Add the 'active' class to the parent li element
         link.parentNode.classList.add("active");
       } else {
         // Remove the 'active' class from the parent li element
