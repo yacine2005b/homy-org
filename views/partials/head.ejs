@@ -1,12 +1,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="stylesheet" href="/fontawesome/css/all.css" />
   <title>Yacine | <%= title %></title>
   <style>
     :root {
-      --blue: #031d44;
-      --light-blue: #48cae4;
+      --blue: #00509d;
+      --light-blue: gold;
     }
     * {
       margin: 0;
@@ -24,6 +24,7 @@
       flex-direction: column;
       margin: 0 auto;
       padding: 0 3rem;
+      background-color: black;
     }
     a {
       text-decoration: none;
@@ -86,14 +87,6 @@
       margin-bottom: 1.25rem;
     }
 
-    footer {
-      display: flex;
-      justify-content: space-between;
-
-      bottom: 0;
-      width: 100%;
-      padding: 7px;
-    }
     .create-blog form {
       max-width: 400px;
       margin: 0 auto;
@@ -111,34 +104,30 @@
       padding: 0.6rem;
     }
     .blogs:hover {
-      border: #48cae4 dashed 2px;
+      border: gold dashed 2px;
     }
 
     .blogs .titleDetails {
       margin-bottom: 1rem;
-      text-justify: center;
     }
-    .create-blog input,
-    textarea {
+    .create-blog input {
       display: block;
       width: 100%;
       margin: 10px 0;
       padding: 8px;
+      font-size: 19px;
     }
-    .create-blog input,
-    textarea:focus {
-      outline-color: var(--light-blue);
+    .create-blog input:focus {
+      outline-color: #00509d;
     }
     .create-blog label {
       display: block;
       margin-top: 24px;
-      font-weight: 600;
-      font-size: 20px;
+      font-weight: 800;
+      font-size: 32px;
       color: var(--blue);
     }
-    textarea {
-      height: 120px;
-    }
+
     .create-blog button {
       width: 100%;
       background-color: var(--blue);
@@ -149,6 +138,7 @@
       padding: 8px 0;
       outline: none;
       border: none;
+      margin-top: 0.5rem;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.25s ease;
@@ -171,6 +161,8 @@
     }
     .details p {
       text-align: center;
+      font-weight: 500;
+      font-size: 22px;
     }
     .details .titleDetails {
       margin-bottom: 3rem;
@@ -183,11 +175,8 @@
       border-radius: 100%;
       text-transform: uppercase;
     }
-    .delete:hover {
-      background-color: red;
-    }
-    .delete img {
-      margin: auto;
+    .titleDetails i:hover {
+      color: var(--light-blue);
     }
   </style>
 </head>

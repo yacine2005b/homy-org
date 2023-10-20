@@ -1,9 +1,10 @@
-const Blog = require('../models/blog')
+const Homy = require('../models/blog')
+
 
 const blog_index = (req, res) => {
-	Blog.find().sort({ createdAt: -1 })
+	Homy.find().sort({ createdAt: -1 })
 		.then((result) => {
-			res.render('index', { title: 'all blogs', blogs: result })
+			res.render('index', { title: 'HOMY', homies: result })
 
 		})
 		.catch((err) => console.log(err))
@@ -12,9 +13,9 @@ const blog_index = (req, res) => {
 const blog_details = (req, res) => {
 	const id = req.params.id
 	console.log(id)
-	Blog.findById(id)
+	Homy.findById(id)
 		.then(result => {
-			res.render('details', { blog: result, title: 'blog details' })
+			res.render('details', { homy: result, title: 'HOMY details' })
 		})
 		.catch((err) => console.log(err))
 
@@ -23,8 +24,8 @@ const blog_create_get = (req, res) => {
 	res.render('create', { title: 'Create Blog' })
 }
 const blog_create_post = (req, res) => {
-	const blog = new Blog(req.body)
-	blog.save()
+	const homy = new Homy(req.body)
+	homy.save()
 		.then((result) => {
 			res.redirect('/blogs')
 		})
@@ -32,7 +33,7 @@ const blog_create_post = (req, res) => {
 }
 const blog_delete = (req, res) => {
 	const id = req.params.id
-	Blog.findByIdAndDelete(id)
+	Homy.findByIdAndDelete(id)
 		.then((result) => {
 			res.json({
 				redirect: '/blogs',

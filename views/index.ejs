@@ -5,15 +5,13 @@
     <%- include('./partials/navBar.ejs') %>
 
     <div>
-      <h1>BLOGS</h1>
+      <h1>HISTORIQUES</h1>
     </div>
     <div class="contentBlogs">
-      <% if(blogs.length >0) {%> <% blogs.forEach(blog => {%>
+      <% if(homies.length >0) {%> <% homies.forEach(homy => {%>
       <div class="blogs">
-        <a href="/blogs/<%=blog._id%>" class="single">
-          <h2 class="title"><%= blog.title %></h2>
-          <p>Date: <%= blog.date.toDateString() %></p>
-          <p class="snippet"><%= blog.snippet %></p>
+        <a href="/blogs/<%=homy._id%>" class="single">
+          <p><%= homy.date.toDateString() %></p>
         </a>
       </div>
 
@@ -21,6 +19,5 @@
       <h2>there are no blogs</h2>
       <%} %>
     </div>
-    <%- include('./partials/footer.ejs') %>
   </body>
 </html>

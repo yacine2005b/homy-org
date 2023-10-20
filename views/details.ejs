@@ -5,16 +5,22 @@
     <%-include('./partials/navBar.ejs') %>
     <div class="details">
       <div class="titleDetails">
-        <h2><%= blog.title %></h2>
-        <a class="delete" data-doc="<%=blog._id %>"
-          ><img src="/trashcan.svg" alt=""
-        /></a>
+        <h2>
+          <%= homy.date.toLocaleDateString('en-US', { timeZone: 'UTC',
+          dateStyle: 'long' }) %>
+        </h2>
+        <a class="delete" data-doc="<%=homy._id %>"
+          ><i class="fa-regular fa-trash-can"></i
+        ></a>
       </div>
       <div class="body">
-        <p><%= blog.body %></p>
+        <p>expenses : <%= homy.expenses %> DA</p>
+        <p>sales : <%= homy.sales %> DA</p>
+        <p class="profit">
+          Profit: <%= parseInt(homy.sales) - parseInt(homy.expenses)%> DA
+        </p>
       </div>
     </div>
-    <%-include('./partials/footer.ejs') %>
 
     <script>
       const dlt = document.querySelector(".delete");
