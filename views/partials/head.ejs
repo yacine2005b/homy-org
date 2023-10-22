@@ -2,10 +2,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/fontawesome/css/all.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
   <title>Yacine | <%= title %></title>
   <style>
     :root {
-      --blue: #00509d;
+      --blue: gold;
       --light-blue: gold;
     }
     * {
@@ -13,6 +20,7 @@
       padding: 0;
       box-sizing: border-box;
       color: var(--blue);
+      font-family: "Dancing Script", cursive;
     }
     body {
       max-width: 1100px;
@@ -25,6 +33,7 @@
       margin: 0 auto;
       padding: 0 3rem;
       background-color: black;
+      overflow-x: hidden;
     }
     a {
       text-decoration: none;
@@ -102,13 +111,15 @@
       align-items: center;
       margin-top: 1rem;
       padding: 0.6rem;
-    }
-    .blogs:hover {
-      border: gold dashed 2px;
-    }
 
+      border: white 2px solid;
+      border-radius: 5px;
+    }
     .blogs .titleDetails {
       margin-bottom: 1rem;
+    }
+    .blogs p {
+      color: white;
     }
     .create-blog input {
       display: block;
@@ -149,15 +160,14 @@
       border: 2px solid var(--blue);
     }
     .details {
-      width: 350px;
       border: 3px dashed var(--blue);
       margin: 0 auto;
       margin-bottom: 18rem;
-      padding: 20px;
+      padding: 28px;
     }
     .titleDetails {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
     .details p {
       text-align: center;
@@ -176,7 +186,52 @@
       text-transform: uppercase;
     }
     .titleDetails i:hover {
-      color: var(--light-blue);
+      color: red;
+    }
+    footer {
+      display: none;
+      position: absolute;
+      bottom: 0;
+    }
+    footer ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      text-decoration: none;
+      gap: 80px;
+      border-top: 3px solid gold;
+    }
+    footer ul li {
+      padding: 15px 30px;
+    }
+    .imgHomy {
+      position: relative;
+      left: 50%;
+      z-index: -1;
+    }
+    @media (max-width: 768px) {
+      body {
+        width: 100vw;
+        padding: 0;
+        margin: 1rem;
+      }
+      nav ul {
+        display: none;
+      }
+      .logo {
+        font-size: 3rem;
+        letter-spacing: 20px;
+        font-weight: 700;
+        margin: auto;
+      }
+      .details {
+        width: 100vw;
+      }
+      footer {
+        display: block;
+        margin: auto;
+        width: 100vw;
+      }
     }
   </style>
 </head>

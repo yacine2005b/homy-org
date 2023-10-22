@@ -2,7 +2,7 @@ const Homy = require('../models/blog')
 
 
 const blog_index = (req, res) => {
-	Homy.find().sort({ createdAt: -1 })
+	Homy.find()
 		.then((result) => {
 			res.render('index', { title: 'HOMY', homies: result })
 

@@ -5,14 +5,15 @@
     <%- include('./partials/navBar.ejs') %>
     <div class="create-blog">
       <form action="/blogs" method="post">
-        <label for="expenses">expenses</label>
+        <label for="expenses">EXPENSES</label>
         <input type="text" id="expenses" name="expenses" required />
-        <label for="sales">sales</label>
+        <label for="sales">SALES</label>
         <input type="text" id="sales" name="sales" required />
 
         <button>submit</button>
     </div>
    
-    <script src></script>
+    <%- include('./partials/footer.ejs') %>
+   
   </body>
 </html>
