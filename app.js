@@ -32,9 +32,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-        res.redirect('/blogs')
+        res.redirect('/homy')
 })
-app.use('/blogs', blogRoutes)
+
+app.use('/homy', blogRoutes)
 
 app.get('/about', (req, res) => {
         res.render('about', { title: 'about' })

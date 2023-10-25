@@ -27,7 +27,7 @@ const blog_create_post = (req, res) => {
 	const homy = new Homy(req.body)
 	homy.save()
 		.then((result) => {
-			res.redirect('/blogs')
+			res.redirect('/homy')
 		})
 		.catch((err) => console.log(err))
 }
@@ -36,7 +36,7 @@ const blog_delete = (req, res) => {
 	Homy.findByIdAndDelete(id)
 		.then((result) => {
 			res.json({
-				redirect: '/blogs',
+				redirect: ('/homy'),
 			})
 		})
 		.catch((err) => console.log(err))

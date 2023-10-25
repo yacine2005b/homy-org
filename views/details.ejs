@@ -25,7 +25,7 @@
     <script>
       const dlt = document.querySelector(".delete");
       dlt.addEventListener("click", (e) => {
-        const endpoint = `/blogs/${dlt.dataset.doc}`;
+        const endpoint = `/homy/${dlt.dataset.doc}`;
 
         fetch(endpoint, {
           method: "DELETE",
