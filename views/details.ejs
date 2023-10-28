@@ -6,8 +6,7 @@
     <div class="details">
       <div class="titleDetails">
         <h2>
-          <%= homy.date.toLocaleDateString('en-US', { timeZone: 'UTC',
-          dateStyle: 'long' }) %>
+          <p><%= homy.date.toDateString() %></p>
         </h2>
         <a class="delete" data-doc="<%=homy._id %>"
           ><i class="fa-regular fa-trash-can"></i
