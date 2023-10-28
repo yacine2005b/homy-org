@@ -3,23 +3,24 @@
   <%- include('./partials/head.ejs') %>
   <body>
     <%- include('./partials/navBar.ejs') %>
-
     <div>
       <h1>HISTORIC</h1>
     </div>
     <div class="contentBlogs">
-      <% if(homies.length >0) {%> <% homies.forEach(homy => {%>
-      <div
-        class="blogs"
-        style="background-color:<%= parseInt(homy.sales) - parseInt(homy.expenses) >= 0 ? 'green' : 'red' %>;"
-      >
-        <a href="/homy/<%=homy._id%>" class="single">
-          <p><%= homy.date.toDateString() %></p>
-        </a>
-      </div>
+      <div>
+        <% if(homies.length >0) {%> <% homies.forEach(homy => {%>
+        <div
+          class="blogs"
+          style="background-color:<%= parseInt(homy.sales) - parseInt(homy.expenses) >= 0 ? 'green' : 'red' %>;"
+        >
+          <a href="/homy/<%=homy._id%>" class="single">
+            <p><%= homy.date.toDateString() %></p>
+          </a>
+        </div>
 
-      <% }); %> <%} %>
+        <% }); %> <%} %>
+      </div>
     </div>
-    <%- include('./partials/homy.ejs')%> <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/footer.ejs') %>
   </body>
 </html>
