@@ -94,7 +94,10 @@ li.active a {
 	margin-bottom: 1.25rem;
 	background-color: black;
 }
-
+.about p {
+	font-size: 1.2rem;
+	font-weight: 900;
+}
 .contentBlogs {
 	display: flex;
 	flex-wrap: wrap;
@@ -254,8 +257,8 @@ footer {
 		width: 98%;
 		font-weight: 700;
 		margin: 0 auto;
+		font-size: larger;
 	}
-
 	footer {
 		display: flex;
 		width: 100vw;
