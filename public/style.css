@@ -1,0 +1,300 @@
+:root {
+	--blue: gold;
+	--light-blue: gold;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--blue);
+	font-family: "Dancing Script", cursive;
+}
+
+body {
+	max-width: 1100px;
+	min-height: 100vh;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 3rem;
+	background-color: black;
+	overflow-x: hidden;
+	background-image: url("./homyLogo.jpg");
+	background-repeat: no-repeat;
+	background-size: 400px;
+	background-position: 80% center;
+}
+
+a {
+	text-decoration: none;
+	color: var(--blue);
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-bottom: 2px solid var(--blue);
+	margin-bottom: 2rem;
+	padding: 1rem;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-end;
+	justify-content: space-between;
+	list-style: none;
+	font-size: 1.1rem;
+}
+
+nav ul li {
+	margin-left: 4rem;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: var(--blue);
+	padding-bottom: 3px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+li.active a {
+	background-color: gold;
+	color: black;
+}
+
+.logo {
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #133c55;
+}
+
+.content {
+	display: flex;
+	gap: 30px;
+}
+
+.about {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 2rem;
+	border: 2px dashed var(--blue);
+	border-radius: 15px;
+	margin-bottom: 1.25rem;
+	background-color: black;
+}
+
+.contentBlogs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.contentBlogs .wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.blogs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 1rem;
+	padding: 0.6rem;
+	border: white 2px solid;
+	border-radius: 5px;
+}
+
+.blogs .titleDetails {
+	margin-bottom: 1rem;
+}
+
+.blogs p {
+	color: white;
+}
+
+.create-blog form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.create-blog input {
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	padding: 8px;
+	font-size: 19px;
+}
+
+.create-blog input:focus {
+	outline-color: #00509d;
+}
+
+.create-blog label {
+	display: block;
+	margin-top: 24px;
+	font-weight: 800;
+	font-size: 2rem;
+	color: var(--blue);
+}
+
+.create-blog button {
+	width: 100%;
+	background-color: var(--blue);
+	color: white;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	padding: 8px 0;
+	outline: none;
+	border: none;
+	margin-top: 0.5rem;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.create-blog button:hover {
+	background: white;
+	color: var(--blue);
+	border: 2px solid var(--blue);
+}
+
+.details {
+	border: 3px dashed var(--blue);
+	margin: 0 auto;
+	margin-bottom: 18rem;
+	padding: 28px;
+}
+
+.titleDetails {
+	display: flex;
+	justify-content: space-between;
+}
+
+.details p {
+	text-align: center;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.details .titleDetails {
+	margin-bottom: 3rem;
+}
+
+.delete {
+	border-radius: 4%;
+	cursor: pointer;
+	padding: 4px 6px;
+	text-align: center;
+	border-radius: 100%;
+	text-transform: uppercase;
+}
+
+.titleDetails i:hover {
+	color: red;
+}
+
+footer {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	body {
+		width: 100vw;
+		padding: 0.5rem;
+		padding-bottom: 0;
+		margin: auto;
+		overflow-x: hidden;
+		background-image: url("./bgMobile.jpg");
+		background-position: center;
+		background-size: cover;
+	}
+
+	nav ul {
+		display: none;
+	}
+
+	.logo {
+		font-size: 3rem;
+		letter-spacing: 20px;
+		font-weight: 700;
+		margin: auto;
+	}
+
+	.details {
+		width: 100vw;
+	}
+
+	.create-blog {
+		margin: 0 auto;
+	}
+
+	.create-blog input {
+		width: 90%;
+	}
+
+	.create-blog button {
+		width: 90%;
+	}
+
+	.about {
+		margin-bottom: 2rem;
+		padding: 1rem;
+		width: 98%;
+		font-weight: 700;
+		margin: 0 auto;
+	}
+
+	footer {
+		display: flex;
+		width: 100vw;
+		margin: 0 auto;
+		position: sticky;
+		bottom: 0;
+		margin-top: 1rem;
+		text-align: center;
+		border-top: 2px solid gold;
+	}
+
+	footer ul {
+		display: flex;
+		list-style: none;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	footer ul li {
+		padding: 7px 27px;
+		font-size: 27px;
+		text-transform: uppercase;
+		border-right: gold 2px dashed;
+		text-align: center;
+	}
+
+	footer ul li:last-child {
+		border-right: none;
+	}
+
+	.create-blog,
+	.about,
+	.details,
+	.contentBlogs {
+		flex: 1;
+	}
+
+	.details {
+		width: 95%;
+	}
+}
