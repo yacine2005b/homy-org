@@ -26,6 +26,7 @@ mongoose.connect(uri, connectionParams)
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
+app.use(express.json())
 app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free'));
 
 app.use(express.urlencoded({ extended: true }))
