@@ -2,6 +2,37 @@
 <html lang="en">
   <%- include('./partials/head.ejs') %>
   <body>
-    <h1>signup</h1>
+    <div class="container">
+      <form class="form">
+        <p class="title">Sign Up</p>
+        <input
+          placeholder="Email"
+          class="username input"
+          type="text"
+          name="email"
+          required
+        />
+        <div class="error email"></div>
+        <input
+          placeholder="Password"
+          class="password input"
+          type="password"
+          name="password"
+          required
+        />
+        <div class="error password"></div>
+        <button class="btn" type="submit">sign Up</button>
+        <p>doesn't have an account <a href="/homy/signup">sign up</a></p>
+      </form>
+    </div>
   </body>
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = form.email.value;
+      const password = form.password.value;
+      console.log(email, password);
+    });
+  </script>
 </html>

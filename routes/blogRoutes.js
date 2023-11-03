@@ -14,6 +14,7 @@ router.get('/login', blogControler.login_get)
 router.post('/login', blogControler.login_post)
 
 router.get('/:id', blogControler.blog_details)
+router.delete('/:id', blogControler.blog_delete)
 
 
 
