@@ -12,7 +12,7 @@
           name="email"
           required
         />
-        <div class="error email"></div>
+        <div class="error email"><i class="fa-solid fa-exclamation"></i></div>
         <input
           placeholder="Password"
           class="password input"
@@ -20,7 +20,7 @@
           name="password"
           required
         />
-        <div class="error password"></div>
+        <div class="error passwrd"><i class="fa-solid fa-exclamation"></i></div>
         <button class="btn" type="submit">sign Up</button>
       </form>
     </div>
@@ -29,16 +29,30 @@
     const form = document.querySelector("form");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
-
+      const emailError = document.querySelector(".error.email");
+      const passwordError = document.querySelector(".error.passwrd");
+      emailError.innerHTML = "";
+      passwordError.innerHTML = "";
       try {
-        const res = await fetch("/homy/signup", {
+        const res = await fetch("/homy/signUp", {
           method: "POST",
           body: JSON.stringify({ email, password }),
           headers: { "content-type": "application/json" },
         });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          emailError.innerHTML += data.errors.email;
+          passwordError.innerHTML += data.errors.password;
+          emailError.style.display = "block";
+          passwordError.style.display = "block";
+        }
+        if (data.user) {
+          location.assign("/");
+        }
       } catch (err) {
         console.log(err);
       }

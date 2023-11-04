@@ -118,7 +118,9 @@ li.active a {
 	border: white 2px solid;
 	border-radius: 5px;
 }
-
+div h1 {
+	color: gold;
+}
 .blogs .titleDetails {
 	margin-bottom: 1rem;
 }
@@ -248,6 +250,7 @@ footer {
 	margin: 0.5rem 0;
 	padding: 1rem 0.5rem;
 	width: 20rem;
+	font-size: 1.2rem;
 	background-color: inherit;
 	color: wheat;
 	border: none;
@@ -292,6 +295,10 @@ footer {
       .btn:hover {
 	background-color: antiquewhite;
 	box-shadow: none;
+      }
+      .error{
+	display: none;
+	color: red;
       }
       
 @media (max-width: 768px) {
