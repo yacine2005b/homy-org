@@ -26,7 +26,7 @@ body {
 	background-size: 400px;
 	background-position: 80% center;
 }
-
+/* navbar */
 a {
 	text-decoration: none;
 	color: var(--blue);
@@ -78,11 +78,8 @@ li.active a {
 	color: gold;
 }
 
-.content {
-	display: flex;
-	gap: 30px;
-}
 
+/* about page */
 .about {
 	width: 70%;
 	text-align: center;
@@ -99,6 +96,7 @@ li.active a {
 	font-weight: 900;
 	
 }
+/* home page */
 .contentBlogs {
 	display: flex;
 	flex-wrap: wrap;
@@ -118,17 +116,17 @@ li.active a {
 	border: white 2px solid;
 	border-radius: 5px;
 }
-div h1 {
-	color: gold;
-}
-.blogs .titleDetails {
-	margin-bottom: 1rem;
-}
-
 .blogs p {
 	color: white;
 }
+div h1 {
+	color: gold;
+}
 
+
+
+
+/* add page */
 .create-blog form {
 	max-width: 400px;
 	margin: 0 auto;
@@ -180,7 +178,6 @@ div h1 {
 .details {
 	border: 3px dashed var(--blue);
 	margin: 0 auto;
-	margin-bottom: 18rem;
 	padding: 28px;
 	color: gold;
 }
@@ -189,7 +186,9 @@ div h1 {
 	display: flex;
 	justify-content: space-between;
 }
-
+.blogs .titleDetails {
+	margin-bottom: 1rem;
+}
 .details p {
 	text-align: center;
 	font-weight: 500;
@@ -232,7 +231,6 @@ footer {
       
       .form {
 	width: 400px;
-	height: 400px;
 	background-image: linear-gradient(to bottom, #424242,#212121);
 	display: flex;
 	align-items: center;
@@ -283,6 +281,7 @@ footer {
 	height: 3rem;
 	width: 20rem;
 	margin-top: 3rem;
+	margin-bottom: 3rem;
 	background-color: wheat;
 	border-radius: 0.5rem;
 	border: none;
@@ -361,6 +360,7 @@ footer {
 
 	footer ul {
 		display: flex;
+		flex: 1;
 		list-style: none;
 		justify-content: space-between;
 		align-items: center;
