@@ -217,10 +217,6 @@ footer {
 }
 
 /* signup */
-::selection {
-	background-color: gray;
-      }
-      
       .container {
 	margin:auto;
 	display: flex;
