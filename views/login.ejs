@@ -12,7 +12,12 @@
           name="email"
           required
         />
-        <div class="error email"></div>
+        <div>
+          <div class="error email">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
+        </div>
+
         <input
           placeholder="Password"
           class="password input"
@@ -20,19 +25,49 @@
           name="password"
           required
         />
-        <div class="error password"></div>
+        <div class="error passwrd">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
         <button class="btn" type="submit">Login</button>
-        <p>doesn't have an account <a href="/homy/signup">sign up</a></p>
       </form>
     </div>
   </body>
   <script>
     const form = document.querySelector("form");
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+      const emailError = document.querySelector(".error.email");
+      const passwordError = document.querySelector(".error.passwrd");
+      emailError.innerHTML = "";
+      passwordError.innerHTML = "";
+      try {
+        const res = await fetch("/homy/login", {
+          method: "POST",
+          body: JSON.stringify({ email, password }),
+          headers: { "content-type": "application/json" },
+        });
+
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          var errorEmail = document.createElement("span");
+          var errorPassword = document.createElement("span");
+          errorEmail.textContent = data.errors.email;
+          errorPassword.textContent = data.errors.password;
+          emailError.appendChild(errorEmail);
+          passwordError.appendChild(errorPassword);
+          emailError.style.display = "block";
+          passwordError.style.display = "block";
+        }
+        if (data.user) {
+          // location.assign("/");
+        }
+      } catch (err) {
+        console.log(err);
+      }
     });
   </script>
 </html>

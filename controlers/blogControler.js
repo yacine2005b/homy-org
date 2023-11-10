@@ -78,10 +78,14 @@ const signUp_post = async (req, res) => {
 const login_get = (req, res) => {
 	res.render('login', { title: 'login' })
 }
-const login_post = (req, res) => {
+const login_post = async (req, res) => {
 	const { email, password } = req.body
-	console.log(email, password)
-	res.send(' new login')
+	try {
+		const user = await User.login(email, password);
+		res.status(200).json({ user: user._id });
+	} catch (err) {
+		res.status(400).json({});
+	}
 }
 
 const blog_delete = (req, res) => {

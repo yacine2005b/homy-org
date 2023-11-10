@@ -13,7 +13,9 @@
           required
         />
         <div>
-          <div class="error email"><i class="fa-solid fa-exclamation"></i></div>
+          <div class="error email">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </div>
         </div>
 
         <input
@@ -23,7 +25,9 @@
           name="password"
           required
         />
-        <div class="error passwrd"><i class="fa-solid fa-exclamation"></i></div>
+        <div class="error passwrd">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
         <button class="btn" type="submit">sign Up</button>
       </form>
     </div>
@@ -48,8 +52,13 @@
         const data = await res.json();
         console.log(data);
         if (data.errors) {
-          emailError.innerHTML += data.errors.email;
-          passwordError.innerHTML += data.errors.password;
+          var errorEmail = document.createElement("span");
+          var errorPassword = document.createElement("span");
+          errorEmail.textContent = data.errors.email;
+          errorPassword.textContent = data.errors.password;
+
+          emailError.appendChild(errorEmail);
+          passwordError.appendChild(errorPassword);
           emailError.style.display = "block";
           passwordError.style.display = "block";
         }
