@@ -2,6 +2,7 @@ const Homy = require('../models/blog')
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
+
 const handleErrors = (err) => {
 	console.log(err.message, err.code)
 	let errors = { email: '', password: '' }
@@ -31,7 +32,7 @@ const handleErrors = (err) => {
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-	return jwt.sign({ id }, 'net ninja secret', {
+	return jwt.sign({ id }, 'homy secret', {
 		expiresIn: maxAge
 	});
 };

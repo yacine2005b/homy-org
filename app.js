@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
+const { requireAuth } = require('./middleware/middlewareAuth')
 const app = express()
 
 
